@@ -12,7 +12,7 @@ void test_push() {
     push(&stack, 30);
 
     // Проверяем, что верхний элемент стека - это 30
-    Node* top = getTop(&stack);
+    const Node* top = getTop(&stack);
     assert(top != NULL && top->data == 30);
 
     destroyStack(&stack);
@@ -28,7 +28,7 @@ void test_pop() {
     push(&stack, 30);
 
     pop(&stack);
-    Node* top = getTop(&stack);
+    const Node* top = getTop(&stack);
     assert(top != NULL && top->data == 20);
 
     pop(&stack);
@@ -66,7 +66,7 @@ void test_searchByValue() {
     push(&stack, 20);
     push(&stack, 30);
 
-    Node* result = searchByValue(&stack, 20);
+    const Node* result = searchByValue(&stack, 20);
     assert(result != NULL && result->data == 20);
 
     result = searchByValue(&stack, 40);
@@ -84,7 +84,7 @@ void test_searchByIndex() {
     push(&stack, 20);
     push(&stack, 30);
 
-    Node* result = searchByIndex(&stack, 0);
+    const Node* result = searchByIndex(&stack, 0);
     assert(result != NULL && result->data == 30);
 
     result = searchByIndex(&stack, 2);
@@ -104,7 +104,7 @@ void test_getTop() {
     push(&stack, 10);
     push(&stack, 20);
 
-    Node* top = getTop(&stack);
+    const Node* top = getTop(&stack);
     assert(top != NULL && top->data == 20);
 
     pop(&stack);
